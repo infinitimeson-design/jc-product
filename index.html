@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JC Product | هویت بصریِ برندهای پیشرو</title>
-    
-    <!-- لینک به استایل‌های ماژولار -->
-    <link rel="stylesheet" href="css/variables.css">
+    <title>JC Product | عکاسی حرفه‌ای محصول</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
@@ -14,92 +11,42 @@
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header id="main-header">
-        <div class="logo">
-            <img src="assets/images/logo-jc-final.png" alt="JC Product Logo">
+    <header class="main-header">
+        <div class="logo-container">
+            <!-- این همون تگی هست که آدرسش رو اصلاح کردیم -->
+            <img src="assets/images/logo-jc-final.png" alt="JC Product Logo" class="logo">
         </div>
-        <nav>
+        <nav class="main-nav">
             <ul>
+                <li><a href="#home">خانه</a></li>
                 <li><a href="#services">خدمات</a></li>
-                <li><a href="#portfolio">پورتفولیو</a></li>
-                <li><a href="#process">فرآیند</a></li>
-                <li><a href="#contact">تماس</a></li>
+                <li><a href="#portfolio">نمونه کارها</a></li>
+                <li><a href="#contact">تماس با ما</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1>هویت بصریِ برندهای پیشرو</h1>
-            <p>خلق جزئیات بی‌نقص از محصولات شما؛ جایی که هنر نورپردازی به کمک تمایز برندتان می‌آید.</p>
-            <div class="cta-container">
-                <button class="btn-primary">مشاهده پورتفولیو</button>
-                <button class="btn-secondary">شروع همکاری</button>
-            </div>
-        </div>
-        <div class="hero-image">
-            <!-- تصویر شاخص در اینجا قرار می‌گیرد -->
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <h1>عکاسی تخصصی محصول برای برند شما</h1>
+            <p>کیفیت، دقت و دیدِ متفاوت در ثبتِ جزئیات.</p>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services">
-    <div class="container">
-        <h2>خدمات ما</h2>
-        <div class="services-grid">
-            <!-- کارت ۱: عکاسی تخصصی -->
-            <div class="service-card" data-description="عکاسی تخصصی با نورپردازی مهندسی‌شده جهت نمایش حداکثر جزئیات و کیفیت متریال محصول شما.">
-                <h3>عکاسی محصول</h3>
-                <p class="service-desc">نمایش هویت محصول شما</p>
+        <section id="services">
+            <h2>خدمات ما</h2>
+            <div class="services-grid">
+                <div class="service-card">عکاسی صنعتی</div>
+                <div class="service-card">عکاسی تبلیغاتی</div>
+                <div class="service-card">ادیت و روتوش</div>
+                <div class="service-card">مشاوره برندینگ</div>
             </div>
-            <!-- کارت ۲: اصلاح و ادیت -->
-            <div class="service-card" data-description="ادیت حرفه‌ای و اصلاح رنگ دقیق برای ایجاد هارمونی بصری و حفظ استانداردهای رنگی برند شما.">
-                <h3>اصلاح و ادیت</h3>
-                <p class="service-desc">پایان‌بندی استایل بصری</p>
-            </div>
-            <!-- کارت ۳: مشاوره برندینگ -->
-            <div class="service-card" data-description="مشاوره برای استراتژی بصری جهت دستیابی به یک تصویر لوکس و متمایز در بازار رقابتی.">
-                <h3>مشاوره برندینگ</h3>
-                <p class="service-desc">نقشه راه حرفه‌ای</p>
-            </div>
-            <!-- کارت ۴: مدیریت محتوای بصری -->
-            <div class="service-card" data-description="برنامه‌ریزی و اجرای تقویم محتوای بصری برای حفظ پیوستگی و جذابیت برند شما در تمامی پلتفرم‌ها.">
-                <h3>مدیریت محتوا</h3>
-                <p class="service-desc">پایداری حضور برند</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </main>
 
-
-    <!-- Process Section -->
-    <section id="process">
-        <h2>فرآیند همکاری</h2>
-        <div class="process-grid">
-            <!-- مراحل چهارگانه اینجا قرار می‌گیرند -->
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section id="final-cta">
-        <h2>آماده‌ای برای یه خروجی حرفه‌ای؟</h2>
-        <button class="btn-primary">درخواست مشاوره رایگان</button>
-    </section>
-
-    <!-- Footer / Contact Section -->
-    <footer id="contact">
-        <div class="contact-info">
-            <a href="https://instagram.com/Yasi_photoland" target="_blank">Instagram: @Yasi_photoland</a>
-            <a href="mailto:Yasiphotoland@gmail.com">Email: Yasiphotoland@gmail.com</a>
-        </div>
+    <footer class="main-footer">
+        <p>&copy; 2026 JC Product - تمامی حقوق محفوظ است.</p>
     </footer>
 
-    <!-- لینک به اسکریپت‌های ماژولار -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
     <script src="js/services.js"></script>
-    <script src="js/gallery.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+:root {
+    /* پالت رنگی لوکس */
+    --color-gold: #D4AF37;        /* طلایی شامپاینی */
+    --color-bg-light: #F5F5F5;    /* سفید عاجی/خاکستری ملایم */
+    --color-bg-dark: #0A0A0A;     /* مشکی عمیق مات */
+    --color-text-dark: #1A1A1A;   /* مشکی زغالی */
+    --color-text-light: #B0B0B0;  /* نقره‌ای مات */
+    
+    /* تایپوگرافی */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* جداکننده‌ها */
+    --accent-line: 1px solid #B0B0B0;
+    
+    /* فاصله‌گذاری و ابعاد */
+    --container-width: 1200px;
+    --transition-speed: 0.4s;
+}

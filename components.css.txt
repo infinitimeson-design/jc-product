@@ -1,0 +1,27 @@
+/* فایل css/components.css */
+
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border: 1px solid #B0B0B0;
+    transition: all 0.4s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    border-color: #D4AF37;
+    background: rgba(20, 20, 20, 0.9);
+}
+
+.service-card h3 {
+    color: #D4AF37;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.service-card .service-desc {
+    color: #B0B0B0;
+    font-size: 0.9rem;
+}

@@ -1,95 +1,108 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JC Product | Jasmina Capture</title>
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC Product — Photography</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="header">
-    <div class="header__inner">
-      <img src="assets/logo-jc-final.png" alt="JC Product" class="header__logo" />
-      <nav class="header__nav">
-        <a href="#services">خدمات</a>
-        <a href="#gallery">گالری</a>
-        <a href="#contact">تماس</a>
-      </nav>
-    </div>
-  </header>
+  <!-- NAV -->
+  <nav class="nav">
+    <img src="logo-jc-final.png" alt="JC" class="nav__logo">
+    <ul class="nav__links">
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <section class="hero" id="hero">
-    <div class="hero__bg" style="background-image:url('assets/IMG_20260718_194855.jpg');"></div>
-    <div class="hero__overlay"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" id="heroBg"></div>
     <div class="hero__content">
-      <p class="hero__sub">عکاسی حرفه‌ای محصول</p>
-      <h1 class="hero__title">هر محصول، یک داستان</h1>
-      <a href="#contact" class="btn-cta">رزرو جلسه</a>
+      <h1 class="hero__title">Captured Moments</h1>
+      <p class="hero__sub">Fine Art Photography</p>
+      <a href="#portfolio" class="btn">View Work</a>
     </div>
+    <div class="hero__scroll">↓</div>
   </section>
 
-  <section class="services" id="services">
-    <div class="section-line"></div>
-    <div class="container">
-      <h2 class="section-title">خدمات</h2>
-      <div class="services__grid">
-        <div class="service-card">
-          <span class="service-card__icon">◈</span>
-          <h3>عکاسی محصول</h3>
-          <p>تصویرسازی دقیق و هنرمندانه برای برندهای لوکس</p>
-        </div>
-        <div class="service-card">
-          <span class="service-card__icon">◈</span>
-          <h3>عکاسی تبلیغاتی</h3>
-          <p>محتوای بصری برای کمپین‌های دیجیتال و چاپی</p>
-        </div>
-        <div class="service-card">
-          <span class="service-card__icon">◈</span>
-          <h3>ویرایش حرفه‌ای</h3>
-          <p>رتوش و پردازش تصویر با استانداردهای بین‌المللی</p>
-        </div>
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="section__title">Portfolio</h2>
+    <div class="grid">
+      <div class="grid__item grid__item--wide">
+        <img src="IMG_20260718_194855.jpg" alt="">
       </div>
-    </div>
-    <div class="section-line"></div>
-  </section>
-
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <h2 class="section-title">نمونه کارها</h2>
-      <div class="gallery__grid">
-        <div class="gallery__item"><img src="assets/IMG_20260719_035914.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035921.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035924.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035926.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035930.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035933.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035935.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035937.jpg" alt="" loading="lazy" /></div>
-        <div class="gallery__item"><img src="assets/IMG_20260719_035940.jpg" alt="" loading="lazy" /></div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035914.jpg" alt="">
+      </div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035921.jpg" alt="">
+      </div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035924.jpg" alt="">
+      </div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035926.jpg" alt="">
+      </div>
+      <div class="grid__item grid__item--wide">
+        <img src="IMG_20260719_035930.jpg" alt="">
+      </div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035933.jpg" alt="">
+      </div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035935.jpg" alt="">
+      </div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035937.jpg" alt="">
+      </div>
+      <div class="grid__item">
+        <img src="IMG_20260719_035940.jpg" alt="">
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__img">
+      <img src="dc91dba0-7f83-4d6e-9a8d-e541df46d46c.png" alt="JC">
+    </div>
+    <div class="about__text">
+      <h2 class="section__title">About</h2>
+      <p>Visual storytelling through light, shadow, and authentic moments. Based in Italy, available worldwide.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section class="contact" id="contact">
-    <div class="section-line"></div>
-    <div class="container contact__inner">
-      <h2 class="section-title">تماس با ما</h2>
-      <form class="contact__form" onsubmit="return false;">
-        <input type="text" placeholder="نام شما" required />
-        <input type="tel" placeholder="شماره تماس" required />
-        <textarea placeholder="توضیحات پروژه" rows="4"></textarea>
-        <button type="submit" class="btn-cta">ارسال درخواست</button>
-      </form>
-    </div>
-    <div class="section-line"></div>
+    <h2 class="section__title">Get in Touch</h2>
+    <form class="form" id="contactForm">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>© ۱۴۰۵ JC Product — تمامی حقوق محفوظ است</p>
+    <img src="logo-jc-final.png" alt="JC" class="footer__logo">
+    <p>© 2026 JC Product. All rights reserved.</p>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lbClose">✕</button>
+    <button class="lightbox__prev" id="lbPrev">‹</button>
+    <img class="lightbox__img" id="lbImg" src="" alt="">
+    <button class="lightbox__next" id="lbNext">›</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-</html>
+</html> 

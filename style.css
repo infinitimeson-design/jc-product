@@ -343,26 +343,8 @@ UTILITY
     transform:none;
 
 }
-/*==========================================================
-NAVIGATION
-==========================================================*/
-
-
-.nav{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    z-index:1000;
-
-    padding:28px 0;
 /* ===========================
-   NAVBAR
+   NAVIGATION
 =========================== */
 
 .nav{
@@ -396,18 +378,31 @@ NAVIGATION
     z-index:1000;
 
 }
-
 .nav__logo{
 
-    width:170px;
+    width:220px;
 
-    height:auto;
+    height:90px;
 
-    display:block;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    flex-shrink:0;
+
+}
+
+.nav__logo img{
+
+    width:100%;
+
+    height:100%;
 
     object-fit:contain;
 
-    transition:transform .35s ease;
+    display:block;
 
 }
 
@@ -416,41 +411,6 @@ NAVIGATION
     transform:scale(1.03);
 
 }
-
-.nav__links{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:42px;
-
-}
-
-.nav__links a{
-
-    font-family:"Montserrat",sans-serif;
-
-    font-size:12px;
-
-    font-weight:500;
-
-    letter-spacing:.18em;
-
-    text-transform:uppercase;
-
-    color:#555;
-
-    transition:.3s ease;
-
-}
-
-.nav__links a:hover{
-
-    color:#000;
-
-}
-
 /* ---------- Mobile ---------- */
 
 @media (max-width:768px){

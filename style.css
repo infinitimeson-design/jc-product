@@ -391,9 +391,13 @@ NAVIGATION
 
 .nav__logo{
 
-    width:64px;
+    width:110px;
 
     height:auto;
+
+    display:block;
+
+    object-fit:contain;
 
     transition:var(--transition);
 

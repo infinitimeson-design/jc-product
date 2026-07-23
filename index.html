@@ -1,108 +1,443 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JC Product — Photography</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JC Product | Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --army: #2D3A30;
+    --black: #000000;
+    --silver: #B0B0B0;
+    --gold: #D4AF37;
+    --white: #FAFAFA;
+    --light-bg: #F5F3EF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-weight: 300;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,250,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(176,176,176,0.2);
+  }
+
+  .nav-logo img { height: 48px; width: auto; }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--army);
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  #hero {
+    height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--light-bg);
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .hero-content { max-width: 700px; padding: 2rem; }
+
+  .hero-line {
+    width: 60px; height: 1px;
+    background: var(--silver);
+    margin: 0 auto 2rem;
+  }
+
+  .hero-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--army);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.9rem 2.8rem;
+    border: 1px solid var(--army);
+    color: var(--army);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--army);
+    color: var(--white);
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 4rem; }
+
+  .section-header { text-align: center; margin-bottom: 4rem; }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300;
+    color: var(--army);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .section-divider {
+    width: 50px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto;
+  }
+
+  /* GALLERY */
+  #gallery { background: var(--white); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background: var(--light-bg);
+  }
+
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  /* ABOUT */
+  #about {
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 4rem;
+  }
+
+  .about-image {
+    flex: 1;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+  }
+
+  .about-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  .about-text { flex: 1; }
+
+  .about-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--army);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  /* SERVICES */
+  #services { background: var(--white); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(176,176,176,0.3);
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .service-card:hover { border-color: var(--gold); }
+
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: var(--gold);
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--army);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  .service-card p {
+    font-size: 0.78rem;
+    line-height: 1.8;
+    color: var(--silver);
+  }
+
+  /* CONTACT */
+  #contact { background: var(--army); }
+
+  #contact .section-header h2 { color: var(--white); }
+
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(176,176,176,0.4);
+    padding: 0.8rem 0;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: rgba(176,176,176,0.6); }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-bottom-color: var(--gold); }
+
+  .contact-form textarea { resize: none; height: 100px; }
+
+  .btn-submit {
+    align-self: center;
+    padding: 0.9rem 3rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .btn-submit:hover {
+    background: var(--gold);
+    color: var(--army);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 2.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-line {
+    flex: 1; height: 1px;
+    background: rgba(176,176,176,0.2);
+  }
+
+  .footer-text {
+    padding: 0 2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--silver);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    section { padding: 4rem 2rem; }
+
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; max-width: 400px; }
+
+    #about {
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 4rem 2rem;
+    }
+
+    .about-image { width: 100%; }
+    footer { padding: 2rem; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .gallery-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-   <img src="assets/images/logo/logo-jc-final.png" alt="JC" class="nav__logo"> 
-    <ul class="nav__links">
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <img src="assets/images/logo/logo-jc-final.png" alt="JC" class="nav__logo">
-    <div class="hero__content">
-      <h1 class="hero__title">Captured Moments</h1>
-      <p class="hero__sub">Fine Art Photography</p>
-      <a href="#portfolio" class="btn">View Work</a>
-    </div>
-    <div class="hero__scroll">↓</div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="portfolio" id="portfolio">
-    <h2 class="section__title">Portfolio</h2>
-    <div class="grid">
-      <div class="grid__item grid__item--wide">
-        <img src="IMG_20260718_194855.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035914.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035921.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035924.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035926.jpg" alt="">
-      </div>
-      <div class="grid__item grid__item--wide">
-        <img src="IMG_20260719_035930.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035933.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035935.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035937.jpg" alt="">
-      </div>
-      <div class="grid__item">
-        <img src="IMG_20260719_035940.jpg" alt="">
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about__img">
-      <img src="dc91dba0-7f83-4d6e-9a8d-e541df46d46c.png" alt="JC">
-    </div>
-    <div class="about__text">
-      <h2 class="section__title">About</h2>
-      <p>Visual storytelling through light, shadow, and authentic moments. Based in Italy, available worldwide.</p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2 class="section__title">Get in Touch</h2>
-    <form class="form" id="contactForm">
-      <input type="text" placeholder="Name" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <img src="assets/images/logo/logo-jc-final.png" alt="JC" class="nav__logo">
-    <p>© 2026 JC Product. All rights reserved.</p>
-  </footer>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox__close" id="lbClose">✕</button>
-    <button class="lightbox__prev" id="lbPrev">‹</button>
-    <img class="lightbox__img" id="lbImg" src="" alt="">
-    <button class="lightbox__next" id="lbNext">›</button>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="assets/images/logo-jc-final.png" alt="JC Product">
   </div>
+  <ul class="nav-links">
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <script src="script.js"></script>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-line"></div>
+    <h1>Capturing<br>Timeless Moments</h1>
+    <p>Professional Photography &amp; Visual Storytelling</p>
+    <a href="#gallery" class="btn-primary">View Portfolio</a>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header">
+    <h2>Portfolio</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035914.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035921.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035924.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035926.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035928.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035930.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035933.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035935.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035937.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035940.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260719_035948.jpg" alt=""></div>
+    <div class="gallery-item"><img src="assets/images/gallery/IMG_20260718_194855.jpg" alt=""></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="about-image">
+    <img src="assets/images/about/IMG_20260718_194855.jpg" alt="Photographer">
+  </div>
+  <div class="about-text">
+    <h2>The Vision<br>Behind the Lens</h2>
+    <div class="section-divider" style="margin: 0 0 1.5rem;"></div>
+    <p>Every frame tells a story. With a passion for light, composition, and authentic emotion, JC Product transforms fleeting moments into lasting visual narratives.</p>
+    <p>Specializing in portrait, editorial, and product photography with an Italian-inspired aesthetic — minimal, elegant, and timeless.</p>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <h2>Services</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">◈</div>
+      <h3>Portrait</h3>
+      <p>Refined personal and professional portraits that capture character and presence.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">◈</div>
+      <h3>Editorial</h3>
+      <p>Fashion and lifestyle editorial photography for brands and publications.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">◈</div>
+      <h3>Product</h3>
+      <p>Clean, elegant product photography that elevates your brand identity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <h2>Get in Touch</h2>
+    <div class="section-divider"></div>
+  </div>
+  <form class="contact-form">
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Subject">
+    <textarea placeholder="Message"></textarea>
+    <button type="submit" class="btn-submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-line"></div>
+  <div class="footer-text">© 2026 JC Product — All Rights Reserved</div>
+  <div class="footer-line"></div>
+</footer>
+
 </body>
-</html>  
+</html>
+ 

@@ -399,7 +399,7 @@ NAVIGATION
 
     object-fit:contain;
 
-    transition:var(--transition);
+    transition:transform .35s ease;
 
     user-select:none;
 
@@ -410,6 +410,7 @@ NAVIGATION
     transform:scale(1.05);
 
 }
+
 
 .nav__links{
 
